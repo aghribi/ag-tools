@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mermaid Diagrams for Google Docs</title>
+  <meta name="description" content="Mermaid Diagrams for Google Docs: what it does, privacy and permissions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container navbar-inner">
+    <a class="logo" href="../../">ag-tools</a>
+    <nav class="nav-links">
+      <a href="../mermaid-docs/">Mermaid for Google Docs</a>
+      <a href="../mermaid-confluence/">Mermaid for Confluence</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container page">
+    <h1>Mermaid Diagrams for Google Docs</h1>
+    <p class="lead">Write a diagram as text, insert it into your document. Last updated: 17 August 2026.</p>
+
+    <section id="overview">
+      <h2>What it does</h2>
+      <p>
+        Mermaid is a plain-text syntax for diagrams: flowcharts, sequence diagrams, state machines,
+        entity relationships, Gantt charts. This add-on opens a sidebar in Google Docs where you type
+        that syntax, see the diagram render as you type, and insert it into your document at the cursor.
+      </p>
+      <p>
+        The diagram is inserted as an image, so it travels with the document and prints correctly.
+        It is rendered at three times display resolution so it stays sharp on screen and on paper.
+      </p>
+    </section>
+
+    <section id="how">
+      <h2>How it works</h2>
+      <p>
+        <strong>Everything runs in your browser.</strong> No server of ours is involved in
+        rendering. Your diagram text is turned into an image by JavaScript running inside the sidebar
+        on your own machine, and that image is placed into your document. The text never leaves your
+        browser, and neither does your document.
+      </p>
+      <p>
+        We operate no backend for this add-on. There is no database, no account, and nothing to log in to.
+      </p>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy</h2>
+      <p><strong>We collect nothing.</strong> Specifically:</p>
+      <p>
+        We do not collect, store, transmit or process the contents of your documents. We do not collect
+        your diagram text. We do not use analytics, tracking pixels or cookies. We do not create user
+        accounts, and we hold no personal data about you, so there is nothing for us to retain, share,
+        sell or delete. No data is transferred to any third party by us.
+      </p>
+      <p>
+        <strong>One third-party request, disclosed in full.</strong> The sidebar loads the open-source
+        Mermaid rendering library from the jsDelivr public CDN when you open it. This is a normal request
+        made by your browser to fetch a JavaScript file. It contains none of your document content and
+        none of your diagram text. As with any web request, jsDelivr can see the IP address it comes from;
+        their privacy policy is at
+        <a href="https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net" target="_blank" rel="noopener">jsdelivr.com</a>.
+      </p>
+      <p>
+        Your use of Google Docs itself remains governed by Google's own privacy policy. This add-on does
+        not change that relationship.
+      </p>
+    </section>
+
+    <section id="permissions">
+      <h2>Permissions</h2>
+      <p>
+        The add-on requests exactly two permissions. It requests no access to Google Drive of any kind.
+      </p>
+      <p>
+        <strong>See, edit, create and delete only the specific Google Docs document you use this add-on
+        with</strong> (<code>documents.currentonly</code>): needed to insert the diagram into the
+        document you have open. It grants no access to any other file in your Drive. We could not open
+        another document even if we wanted to.
+      </p>
+      <p>
+        <strong>Display and run third-party web content in prompts and sidebars</strong>
+        (<code>script.container.ui</code>): needed to show the editor sidebar.
+      </p>
+    </section>
+
+    <section id="support">
+      <h2>Support</h2>
+      <p>
+        Questions, bug reports and feature requests go to
+        <strong><a href="mailto:ai@artifact-network.org">ai@artifact-network.org</a></strong>.
+        Answers in English and French.
+      </p>
+    </section>
+  
+  <section id="publisher">
+    <h2>Publisher</h2>
+    <p>Adnan Ghribi, <a href="mailto:ai@artifact-network.org">ai@artifact-network.org</a></p>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>Adnan Ghribi</span>
+    <div class="footer-links">
+      <a href="../../">ag-tools</a>
+      <a href="mailto:ai@artifact-network.org">ai@artifact-network.org</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

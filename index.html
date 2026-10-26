@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ag-tools</title>
+  <meta name="description" content="Open-source Python and TypeScript libraries for LLM applications: PII tokenization, evaluation, runtime guardrails and document extraction. MIT licence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container navbar-inner">
+    <a class="logo" href="./">ag-tools</a>
+    <nav class="nav-links">
+      <a href="#libraries">Libraries</a>
+      <a href="#eu-ai-act">EU AI Act</a>
+      <a href="#benchmarks">Benchmarks</a>
+      <a href="https://github.com/aghribi?tab=repositories&amp;q=ag-">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <h1>Open-source building blocks<br />for LLM applications</h1>
+    <p class="hero-sub">PII tokenization, evaluation, runtime guardrails and document extraction. Python and TypeScript, MIT licence, installed from PyPI and npm.</p>
+    <pre class="code"><span class="dim"># pip install ag-pii-vault &amp;&amp; python -m spacy download en_core_web_lg</span>
+from ag_pii_vault import Detector, LocalVault, Tokenizer
+
+detector = Detector()
+tokenizer = Tokenizer(vault=LocalVault(path=":memory:"), key="my-hmac-secret")
+
+text = "Contact John Smith at john@acme.com"
+safe = tokenizer.tokenize(text, detector.analyze(text))
+print(safe)                        <span class="dim"># Contact PERSON_353fcd26 at EMAIL_9abc0eb1</span>
+print(tokenizer.dehydrate(safe))   <span class="dim"># Contact John Smith at john@acme.com</span></pre>
+  </section>
+
+  <section id="libraries">
+    <p class="section-label">Libraries</p>
+    <div class="grid">
+      <div class="card">
+        <h3>ag-pii-vault</h3>
+        <p>Detects personal data, replaces it with deterministic HMAC tokens before text reaches an LLM, and restores it in the response. <code>SafeOpenAI</code> and <code>SafeAnthropic</code> wrap the official clients.</p>
+        <p class="install"><code>pip install ag-pii-vault</code> · <code>npm install ag-pii-vault</code></p>
+        <p class="links"><a href="https://github.com/aghribi/ag-pii-vault">GitHub</a><a href="https://pypi.org/project/ag-pii-vault/">PyPI</a><a href="https://www.npmjs.com/package/ag-pii-vault">npm</a></p>
+      </div>
+      <div class="card">
+        <h3>ag-evalforge</h3>
+        <p>Scores model outputs against a dataset with exact match, regex, ROUGE-L, semantic similarity, LLM-as-judge or custom scorers, and compares two models. Command line <code>ag-evalforge</code>.</p>
+        <p class="install"><code>pip install ag-evalforge</code> · <code>npm install ag-evalforge</code></p>
+        <p class="links"><a href="https://github.com/aghribi/ag-evalforge">GitHub</a><a href="https://pypi.org/project/ag-evalforge/">PyPI</a><a href="https://www.npmjs.com/package/ag-evalforge">npm</a></p>
+      </div>
+      <div class="card">
+        <h3>ag-guardrail</h3>
+        <p>Scans prompts and responses for prompt injection, jailbreaks, PII in output, harmful content and off-topic requests. Policies in YAML, flagged calls written to an audit log.</p>
+        <p class="install"><code>pip install ag-guardrail</code> · <code>npm install ag-guardrail</code></p>
+        <p class="links"><a href="https://github.com/aghribi/ag-guardrail">GitHub</a><a href="https://pypi.org/project/ag-guardrail/">PyPI</a><a href="https://www.npmjs.com/package/ag-guardrail">npm</a></p>
+      </div>
+      <div class="card">
+        <h3>ag-docparse</h3>
+        <p>Extracts typed fields from PDF or text documents with an LLM, using built-in schemas (invoice, loan application, W-2, NDA, contract) or a custom JSON schema. Command line <code>ag-docparse</code>.</p>
+        <p class="install"><code>pip install ag-docparse</code> · <code>npm install ag-docparse</code></p>
+        <p class="links"><a href="https://github.com/aghribi/ag-docparse">GitHub</a><a href="https://pypi.org/project/ag-docparse/">PyPI</a><a href="https://www.npmjs.com/package/ag-docparse">npm</a></p>
+      </div>
+    </div>
+    <p class="note">Examples for each library: <a href="https://github.com/aghribi/ag-notebooks">ag-notebooks</a>. LLM features use your own OpenAI or Anthropic key.</p>
+  </section>
+
+  <section id="eu-ai-act">
+    <p class="section-label">EU AI Act (Regulation 2024/1689)</p>
+    <div class="grid">
+      <div class="card">
+        <span class="art">Art. 9</span>
+        <h3>Risk management: ag-evalforge, ag-guardrail</h3>
+        <p>Repeatable evaluation runs give documented performance baselines. Runtime checks block unsafe inputs and outputs.</p>
+      </div>
+      <div class="card">
+        <span class="art">Art. 10</span>
+        <h3>Data governance: ag-pii-vault</h3>
+        <p>Personal data is tokenized before it reaches a third-party LLM provider, and restored only on your side.</p>
+      </div>
+      <div class="card">
+        <span class="art">Art. 12</span>
+        <h3>Record-keeping: ag-guardrail</h3>
+        <p><code>AuditLog</code> records each flagged call with input, output, triggered rules and timestamp.</p>
+      </div>
+      <div class="card">
+        <span class="art">Art. 13</span>
+        <h3>Transparency: ag-docparse</h3>
+        <p>Extraction into typed, schema-defined fields makes AI-processed document data inspectable.</p>
+      </div>
+    </div>
+    <p class="note">Using these libraries is not a conformity assessment.</p>
+  </section>
+
+  <section id="benchmarks">
+    <p class="section-label">Benchmarks</p>
+    <p class="note" style="margin-top:0">Scripts, public datasets and result files with bootstrap 95&nbsp;% confidence intervals: <a href="https://github.com/aghribi/ag-benchmarks">ag-benchmarks</a>. The results were measured in May 2026 against a hosted deployment of the libraries, including its LLM-based modes.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>Adnan Ghribi · MIT licence</span>
+    <div class="footer-links">
+      <a href="https://github.com/aghribi?tab=repositories&amp;q=ag-">GitHub</a>
+      <a href="apps/mermaid-docs/">Mermaid for Google Docs</a>
+      <a href="apps/mermaid-confluence/">Mermaid for Confluence</a>
+      <a href="mailto:ai@artifact-network.org">ai@artifact-network.org</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

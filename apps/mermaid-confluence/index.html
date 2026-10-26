@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mermaid Diagrams for Confluence</title>
+  <meta name="description" content="Mermaid Diagrams for Confluence: what it does, privacy and permissions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container navbar-inner">
+    <a class="logo" href="../../">ag-tools</a>
+    <nav class="nav-links">
+      <a href="../mermaid-docs/">Mermaid for Google Docs</a>
+      <a href="../mermaid-confluence/">Mermaid for Confluence</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container page">
+    <h1>Mermaid Diagrams for Confluence</h1>
+    <p class="lead">Write a diagram as text, render it on the page. Last updated: 17 August 2026.</p>
+
+    <section id="overview">
+      <h2>What it does</h2>
+      <p>
+        Mermaid is a plain-text syntax for diagrams: flowcharts, sequence diagrams, state machines,
+        entity relationships, Gantt charts. This app adds a <strong>Mermaid Diagram</strong> macro to
+        Confluence. Insert it on a page, type the syntax with a live preview beside you, and the diagram
+        renders on the published page.
+      </p>
+      <p>
+        Diagrams render as vector graphics, so they stay sharp at any zoom level and adapt to the width
+        of the page. Because the source is text, diagrams are editable, diffable and reviewable like the
+        rest of your documentation.
+      </p>
+    </section>
+
+    <section id="how">
+      <h2>How it works</h2>
+      <p>
+        <strong>Everything runs inside Atlassian.</strong> The app is built on Atlassian Forge and runs
+        entirely within Atlassian's own infrastructure. It makes <strong>no network requests to any
+        external service</strong>. The rendering library is bundled inside the app rather than loaded
+        from a CDN.
+      </p>
+      <p>
+        <strong>The app is eligible for the Runs on Atlassian programme</strong>, Atlassian's designation
+        for apps that keep data within Atlassian's cloud and declare no external egress.
+      </p>
+      <p>
+        No server of ours is involved: no backend function and no app storage. Rendering happens
+        in your browser when the page loads.
+      </p>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy</h2>
+      <p><strong>We collect nothing, and we store nothing.</strong> Specifically:</p>
+      <p>
+        We do not collect, store, transmit or process your page content. We do not use analytics,
+        tracking or cookies. We run no servers for this app, so there is no infrastructure of ours that
+        your data could reach. No data is transferred to any third party, and the app contacts no
+        external service at all.
+      </p>
+      <p>
+        <strong>Where the diagram source lives.</strong> The text of each diagram is stored in the macro's
+        configuration, inside your own Confluence page content, held by Atlassian under your
+        existing agreement with them. We do not hold a copy. The app declares no Forge storage of any
+        kind, so uninstalling it leaves nothing of ours behind.
+      </p>
+      <p>
+        <strong>Data residency.</strong> Because the app uses no external services and no app storage,
+        your data stays wherever your Confluence site already keeps it, including EU data residency if
+        your site is pinned to the EU.
+      </p>
+    </section>
+
+    <section id="permissions">
+      <h2>Permissions</h2>
+      <p>
+        The app requests <strong>no Confluence API scopes</strong>. It does not read your spaces, pages,
+        attachments or user directory. It receives only the configuration of the macro you place on a
+        page: the diagram text you typed into it.
+      </p>
+      <p>
+        It declares <strong>no external egress permissions</strong>, meaning it is not permitted to
+        contact any service outside Atlassian, by design rather than by promise.
+      </p>
+    </section>
+
+    <section id="support">
+      <h2>Support</h2>
+      <p>
+        Questions, bug reports and feature requests go to
+        <strong><a href="mailto:ai@artifact-network.org">ai@artifact-network.org</a></strong>.
+        Answers in English and French.
+      </p>
+    </section>
+  
+  <section id="publisher">
+    <h2>Publisher</h2>
+    <p>Adnan Ghribi, <a href="mailto:ai@artifact-network.org">ai@artifact-network.org</a></p>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>Adnan Ghribi</span>
+    <div class="footer-links">
+      <a href="../../">ag-tools</a>
+      <a href="mailto:ai@artifact-network.org">ai@artifact-network.org</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
